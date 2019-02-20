@@ -16,7 +16,7 @@ python基础环境  2.7.9
     或者(尽量选择源码安装，ycm安装的cmake版本过低容易报错)
     yum install cmake
 
-    三、源码安装vim编辑器
+三、源码安装vim编辑器
     下载vim源码：git clone https://github.com/vim/vim.git
     ./configure --prefix=/usr --with-features=huge  --enable-luainterp=yes --enable-rubyinterp=yes --enable-fontset --enable-sniff --enable-xim --disable-selinux  --enable-cscope --enable-multibyte --enable-pythoninterp --with-python-config-dir=/usr/lib64/python2.7/config/
 
@@ -33,7 +33,7 @@ python基础环境  2.7.9
     –with-python-config-dir=/usr/lib64/python3.5/config 指定python3路径
     make && make install
 
-    四、安装插件管理器
+四、安装插件管理器
     git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 
     管理器常用命令：
@@ -46,7 +46,7 @@ python基础环境  2.7.9
     :BundleClean -清除列表中没有的插件
     :BundleClean! -清除列表中没有的插件
 
-    五、安装YouCompleteMe + llvm + clang
+五、安装YouCompleteMe + llvm + clang
         说明：在上一步中安装YouCompleteMe插件较慢，可以选择git安装
         git clone --recursive https://github.com/Valloric/YouCompleteMe.git
         git submodule update --init --recursive      //确认仓库的完整性
