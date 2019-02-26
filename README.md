@@ -117,3 +117,12 @@ python基础环境  2.7.9
             make ycm_core
             注意：DPATH_TO_LLVM_ROOT 为llvm编译后的二进制文件目录
 
+issue 1: 修复golang不能补全的问题
+cd YouCompleteMe/third_party/ycmd
+git checkout master
+git pull
+git submodule update --init --recursive
+./build.py --go-completer
+
+issue 2: 安装ack
+curl https://beyondgrep.com/ack-2.22-single-file > /usr/bin/ack && chmod 0755 /usr/bin/ack
