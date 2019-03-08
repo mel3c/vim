@@ -104,7 +104,6 @@ Plug 'bling/vim-airline'
 Plug 'bling/vim-bufferline'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'majutsushi/tagbar'
-Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
 Plug 'mileszs/ack.vim'
 Plug 'Yggdroot/LeaderF', {'do': './install.sh'}
@@ -132,25 +131,6 @@ let g:tagbar_compact = 1
 let g:tagbar_singleclick = 1
 let g:tagbar_autoshowtag = 1
 nmap tl :Tagbar<CR>
-
-"------>scrooloose/nerdtree设置<------
-let NERDTreeMinimalUI=1             "不显示'Bookmarks' label 'Press ? for help'
-let NERDChristmasTree=1             "显示增强
-let NERDTreeAutoCenter=1            "自动调整焦点
-let NERDTreeMouseMode=2             "鼠标模式:目录单击,文件双击
-let NERDTreeWinSize=50              "窗口宽度
-let NERDTreeShowFiles=1             "显示文件
-let NERDTreeShowHidden=0            "显示隐藏文件
-let NERDTreeShowLineNumbers=1       "显示行号
-let NERDTreeWinPos='left'           "窗口位置
-let NERDTreeHighlightCursorline=1   "高亮显示当前文件或目录
-let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.obj$', '\.o$', '\.so$', '\.egg$','\.git$', '^\.svn$', '^\.hg$' ]
-let g:netrw_home='~/bak'
-let g:NERDTreeDirArrows=0           "显示箭头，0传统+号
-let g:NERDTreeQuitOnOpen=1          "打开文件后自动关闭
-let g:NERDTreeMapOpenSplit = 's'
-let g:NERDTreeMapOpenVSplit = 'v'
-nmap <silent> nt :NERDTreeToggle<CR>
 
 "------>scrooloose/syntastic设置<------
 let g:syntastic_aggregate_errors = 1
