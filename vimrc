@@ -122,7 +122,8 @@ let g:bufferline_show_bufnr = 0
 nmap fix :FixWhitespace<CR>
 
 "------>majutsushi/tagbar设置<------
-let g:tagbar_ctags_bin='/usr/bin/ctags'
+"let g:tagbar_ctags_bin='/usr/bin/ctags'
+let g:tagbar_ctags_bin='/usr/local/opt/ctags-exuberant/bin/ctags' "for mac
 let g:tagbar_width=60
 let g:tagbar_autofocus = 1
 let g:tagbar_left = 0
