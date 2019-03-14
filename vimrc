@@ -33,15 +33,17 @@ language messages zh_CN.utf-8   "解决consle输出乱码
 set nobackup                    "从不备份
 set noswapfile                  "禁止生成临时文件
 
-"------>主题设置<------
-colorscheme desert              "设置主题为desert.vim
+"------>行列设置<------
 autocmd InsertEnter * se cul    "用浅色高亮当前行
-set cursorline                  "设置当前行，需要deset.vim配合使用
-set cursorcolumn                "设置当前列 同上
+set cursorline                  "设置当前行
+set cursorcolumn                "设置当前列
 set background=light
+hi LineNr                           ctermfg=7       ctermbg=0   "行号[8 for xshell, 0 for mac]
+hi CursorLine       cterm=None      ctermfg=None    ctermbg=0   "光标行[8 for xshell, 0 for mac]
+hi CursorColumn                     ctermfg=None    ctermbg=0   "光标列[8 for xshell, 0 for mac]
 
-"------>搜索设置<------
-set incsearch                   "开启实时搜索
+
+"------>搜索设置<------ set incsearch                   "开启实时搜索
 set hlsearch                    "高亮显示结果"
 set nowrapscan                  "关闭重复搜索
 set ignorecase	                "忽略大小写
@@ -83,6 +85,7 @@ nnoremap ] :bn<CR>
 nnoremap [ :bp<CR>
 "删除一个buffer
 nnoremap bb :bd<CR>
+
 "C+h 左移光标
 inoremap <c-h> <Left>
 "C+l 右移光标
@@ -158,7 +161,7 @@ nnoremap <c-a> :Ack! -i<Space>
 let g:Lf_ShortcutF = '<C-P>'
 let g:Lf_CommandMap = {'<C-C>': ['<Esc>', '<C-C>']}
 let g:Lf_WindowHeight = 0.3
-highlight Lf_hl_match cterm=bold ctermfg=5
+highlight Lf_hl_match       cterm=bold ctermfg=5
 highlight Lf_hl_matchRefine cterm=bold ctermfg=201
 noremap <c-f> :LeaderfLine<cr>
 noremap <c-h> :LeaderfMru<cr>
@@ -170,8 +173,8 @@ set completeopt-=preview                        "补全内容不以分割子窗�
 set fillchars=vert:\ ,stl:\ ,stlnc:\
 
 "补全窗口样式配色
-highlight Pmenu     cterm=bold ctermfg=None    ctermbg=blue
-highlight PmenuSel  cterm=bold ctermfg=None    ctermbg=4
+highlight Pmenu     cterm=bold  ctermfg=7   ctermbg=4
+highlight PmenuSel  cterm=bold  ctermfg=7   ctermbg=3
 
 let loaded_matchparen = 1                       "关闭高亮括号匹配
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
