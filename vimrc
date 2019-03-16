@@ -155,6 +155,7 @@ let g:pyflakes_use_quickfix = 0     "弥补syntastic只能打开和保存才检�
 let python_highlight_all = 1        "for python.vim syntax highlight hdima/python-syntax\
 
 "------>mileszs/ack.vim设置<------
+let g:ackprg = 'ag --nogroup --nocolor --column'    "需要ag命令支持
 nnoremap <c-a> :Ack! -i<Space>
 
 "------>Yggdroot/LeaderF设置<------
