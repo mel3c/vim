@@ -2,8 +2,15 @@
 
 ## 基础环境
 ```Bash
+#for centos
 [root@localhost ~]# yum -y install gcc gcc-c++ cmake git
 [root@localhost ~]# yum -y install ncurses-devel python-devel
+```
+```Bash
+#for mac os
+[root@localhost ~]# ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+[root@localhost ~]# brew cask install git
+[root@localhost ~]# brew cask install cmake
 ```
 
 ## 源码安装VIM

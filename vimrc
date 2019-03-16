@@ -43,7 +43,8 @@ hi CursorLine       cterm=None      ctermfg=None    ctermbg=0   "光标行[8 for
 hi CursorColumn                     ctermfg=None    ctermbg=0   "光标列[8 for xshell, 0 for mac]
 
 
-"------>搜索设置<------ set incsearch                   "开启实时搜索
+"------>搜索设置<------
+set incsearch                   "开启实时搜索
 set hlsearch                    "高亮显示结果"
 set nowrapscan                  "关闭重复搜索
 set ignorecase	                "忽略大小写
@@ -169,8 +170,8 @@ noremap <c-h> :LeaderfMru<cr>
 noremap <c-n> :LeaderfFunction<cr>
 
 "------>Valloric/YouCompleteMe设置<------
-set report=0                                    "告诉我们哪一行被改变过
-set completeopt-=preview                        "补全内容不以分割子窗口形式出现，只显示补全列表
+set report=0
+set completeopt-=preview
 set fillchars=vert:\ ,stl:\ ,stlnc:\
 
 "补全窗口样式配色
