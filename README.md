@@ -40,7 +40,8 @@
 * 安装ag命令行工具
 ```Bash
 [root@localhost ~]# brew install the_silver_searcher    # for mac os
-[root@localhost ~]# yum install silversearcher-ag       # for linux os
+[root@localhost ~]# yum install silversearcher-ag       # for ubuntu os
+[root@localhost ~]# yum install the_silver_searcher     # for centos
 ```
 
 ### tagbar代码结构插件
