@@ -2,8 +2,15 @@
 
 ## 基础环境
 ```Bash
+#for centos
 [root@localhost ~]# yum -y install gcc gcc-c++ cmake git
 [root@localhost ~]# yum -y install ncurses-devel python-devel
+```
+```Bash
+#for mac os
+[root@localhost ~]# ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+[root@localhost ~]# brew cask install git
+[root@localhost ~]# brew cask install cmake
 ```
 
 ## 源码安装VIM
@@ -30,9 +37,10 @@
 
 ## 相关插件及配置
 ### ack全局搜索插件
-* 安装ack命令脚本
+* 安装ag命令行工具
 ```Bash
-[root@localhost ~]# curl https://beyondgrep.com/ack-2.22-single-file > /usr/bin/ack && chmod 0755 /usr/bin/ack
+[root@localhost ~]# brew install the_silver_searcher    # for mac os
+[root@localhost ~]# yum install silversearcher-ag       # for linux os
 ```
 
 ### tagbar代码结构插件
