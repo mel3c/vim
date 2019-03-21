@@ -46,7 +46,7 @@
 ```Bash
 [~/project]$ mkdir -p src/golang.org/x && cd src/golang.org/x
 [~/project]$ git clone https://github.com/golang/tools.git
-[~/project]$ git clone git clone https://github.com/golang/lint.git
+[~/project]$ git clone https://github.com/golang/lint.git
 [~/project/src/golang.org/x]$ cd tools/cmd/goimports/ && go install
 [~/project/src/golang.org/x/tools/cmd/goimports]$ cd ~/project/src/golang.org/x/lint/golint/ && go install
 [~/project/src/golang.org/x/tools/cmd/goimports]$ mv ~/project/bin/goimports /usr/local/go/bin/
