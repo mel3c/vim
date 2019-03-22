@@ -71,9 +71,9 @@ nnoremap h <c-w>h
 "光标移动到右边窗口
 nnoremap l <c-w>l
 "光标移动到上面窗口
-nnoremap k <c-w>k
+nnoremap <c-k> <c-w>k
 "光标移动到下面窗口
-nnoremap j <c-w>j
+nnoremap <c-j> <c-w>j
 "大写H 移动光标到行首
 nnoremap H ^
 "大写L 移动光标到行尾
@@ -81,9 +81,9 @@ nnoremap L $
 "F2打开/关闭行号
 nnoremap <F2> :set nonumber! number?<CR>
 "移动光标到右边的buffer
-nnoremap ] :bn<CR>
+nnoremap <c-l> :bn<CR>
 "移动光标到左边的buffer
-nnoremap [ :bp<CR>
+nnoremap <c-o> :bp<CR>
 "删除一个buffer
 nnoremap bb :bd<CR>
 
@@ -190,9 +190,23 @@ let g:ycm_min_num_of_chars_for_completion=1     "从第一个键入字符就开�
 let g:go_def_mode="godef"
 let g:go_fmt_command="goimports"
 let g:go_fmt_autosave=1
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_variable_assignments = 1
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_generate_tags = 1
+let g:go_highlight_variable_declarations = 1
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_function_parameters = 1
+let g:godef_same_file_in_same_window=1
 let g:syntastic_go_checkers=['golint', 'govet', 'errcheck']
 let g:syntastic_mode_map={'mode':'active', 'passive_filetypes':['go']}
 nnoremap go :GoRun<CR>
-nnoremap gb :GoBuild<CR>
 nnoremap gi :GoInstall<CR>
 
