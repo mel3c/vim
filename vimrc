@@ -83,7 +83,7 @@ nnoremap <F2> :set nonumber! number?<CR>
 "移动光标到右边的buffer
 nnoremap <c-l> :bn<CR>
 "移动光标到左边的buffer
-nnoremap <c-o> :bp<CR>
+nnoremap <c-h> :bp<CR>
 "删除一个buffer
 nnoremap bb :bd<CR>
 
@@ -162,11 +162,11 @@ nnoremap <c-a> :Ack! -i<Space>
 "------>Yggdroot/LeaderF设置<------
 let g:Lf_ShortcutF = '<C-P>'
 let g:Lf_CommandMap = {'<C-C>': ['<Esc>', '<C-C>']}
-let g:Lf_WindowHeight = 0.3
+let g:Lf_WindowHeight = 0.4
 highlight Lf_hl_match       cterm=bold ctermfg=5
 highlight Lf_hl_matchRefine cterm=bold ctermfg=201
 noremap <c-f> :LeaderfLine<cr>
-noremap <c-h> :LeaderfMru<cr>
+noremap <c-o> :LeaderfMru<cr>
 noremap <c-n> :LeaderfFunction<cr>
 
 "------>Valloric/YouCompleteMe设置<------
