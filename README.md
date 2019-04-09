@@ -68,4 +68,9 @@
 [~/project]$ sudo mv ~/project/bin/errcheck  /usr/local/go/bin/
 ```
 
+### vim-javascript插件支持
+* 下载安装node http://nodejs.org/dist/
+```Bash
+[~/project]$ npm install -g jshint     # install jshint for check js
+```
 

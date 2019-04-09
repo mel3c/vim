@@ -115,6 +115,7 @@ Plug 'Valloric/YouCompleteMe', {'do': './install.py --all'}
 
 Plug 'fatih/vim-go'
 Plug 'mattn/emmet-vim'
+Plug 'maksimr/vim-jsbeautify'
 Plug 'pangloss/vim-javascript'
 call plug#end()
 
