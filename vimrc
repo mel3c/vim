@@ -71,9 +71,9 @@ nnoremap h <c-w>h
 "光标移动到右边窗口
 nnoremap l <c-w>l
 "光标移动到上面窗口
-nnoremap <c-k> <c-w>k
+nnoremap k <c-w>k
 "光标移动到下面窗口
-nnoremap <c-j> <c-w>j
+nnoremap j <c-w>j
 "大写H 移动光标到行首
 nnoremap H ^
 "大写L 移动光标到行尾
@@ -81,9 +81,9 @@ nnoremap L $
 "F2打开/关闭行号
 nnoremap <F2> :set nonumber! number?<CR>
 "移动光标到右边的buffer
-nnoremap <c-l> :bn<CR>
+nnoremap ] :bn<CR>
 "移动光标到左边的buffer
-nnoremap <c-h> :bp<CR>
+nnoremap [ :bp<CR>
 "删除一个buffer
 nnoremap bb :bd<CR>
 
