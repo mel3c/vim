@@ -24,6 +24,9 @@ set viminfo+=!                  "恢复文件上次打开的地方
 set viminfo='10,\"100,:20,%,n~/.viminfo
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 
+"------>关闭press enter for function<------
+set shortmess=a
+
 "------>编码设置<------
 set encoding=utf-8
 set fileencodings=utf-8,gb2312,gbk,gb18030,chinese,cp936,latin-1,chinese,ucs-bom
@@ -61,31 +64,43 @@ set formatoptions=tcrqn         "自动格式化
 
 "------>快捷键设置<------
 "左右分割窗口
-nnoremap wv <c-w>v
+noremap wv <c-w>v
 "关闭当前分割的窗口
-nnoremap wd <c-w>c
+noremap wd <c-w>c
 "上下分割窗口
-nnoremap ws <c-w>s
+noremap ws <c-w>s
 "光标移动到左边窗口
-nnoremap h <c-w>h
+noremap <c-h> <c-w>h
 "光标移动到右边窗口
-nnoremap l <c-w>l
+noremap <c-l> <c-w>l
 "光标移动到上面窗口
-nnoremap k <c-w>k
+noremap <c-k> <c-w>k
 "光标移动到下面窗口
-nnoremap j <c-w>j
+noremap <c-j> <c-w>j
 "大写H 移动光标到行首
-nnoremap H ^
+noremap H ^
 "大写L 移动光标到行尾
-nnoremap L $
+noremap L $
 "F2打开/关闭行号
-nnoremap <F2> :set nonumber! number?<CR>
+noremap <F2> :set nonumber! number?<CR>
 "移动光标到右边的buffer
-nnoremap ] :bn<CR>
+noremap b :bn<CR>
 "移动光标到左边的buffer
-nnoremap [ :bp<CR>
+noremap B :bp<CR>
 "删除一个buffer
-nnoremap bb :bd<CR>
+noremap bd :bd<CR>
+"关闭others Buffer
+function! BufCloseOthers()
+   let l:currentBufNum   = bufnr("%")
+   for i in range(1,bufnr("$"))
+     if buflisted(i)
+       if i!=l:currentBufNum
+         execute("bdelete ".i)
+       endif
+     endif
+   endfor
+endfunction
+noremap ba :call BufCloseOthers()<CR>
 
 "C+h 左移光标
 inoremap <c-h> <Left>
