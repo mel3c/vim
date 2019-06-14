@@ -45,7 +45,6 @@ hi LineNr                           ctermfg=7       ctermbg=0   "行号[8 for xs
 hi CursorLine       cterm=None      ctermfg=None    ctermbg=0   "光标行[8 for xshell, 0 for mac]
 hi CursorColumn                     ctermfg=None    ctermbg=0   "光标列[8 for xshell, 0 for mac]
 
-
 "------>搜索设置<------
 set incsearch                   "开启实时搜索
 set hlsearch                    "高亮显示结果"
@@ -62,56 +61,8 @@ set autoindent                  "开启自动对齐
 set smartindent                 "C编程智能自动缩进
 set formatoptions=tcrqn         "自动格式化
 
-"------>快捷键设置<------
-"左右分割窗口
-noremap wv <c-w>v
-"关闭当前分割的窗口
-noremap wd <c-w>c
-"上下分割窗口
-noremap ws <c-w>s
-"光标移动到左边窗口
-noremap <c-h> <c-w>h
-"光标移动到右边窗口
-noremap <c-l> <c-w>l
-"光标移动到上面窗口
-noremap <c-k> <c-w>k
-"光标移动到下面窗口
-noremap <c-j> <c-w>j
-"大写H 移动光标到行首
-noremap H ^
-"大写L 移动光标到行尾
-noremap L $
-"F2打开/关闭行号
-noremap <F2> :set nonumber! number?<CR>
-"移动光标到右边的buffer
-noremap b :bn<CR>
-"移动光标到左边的buffer
-noremap B :bp<CR>
-"删除一个buffer
-noremap bd :bd<CR>
-"关闭others Buffer
-function! BufCloseOthers()
-   let l:currentBufNum   = bufnr("%")
-   for i in range(1,bufnr("$"))
-     if buflisted(i)
-       if i!=l:currentBufNum
-         execute("bdelete ".i)
-       endif
-     endif
-   endfor
-endfunction
-noremap ba :call BufCloseOthers()<CR>
-
-"C+h 左移光标
-inoremap <c-h> <Left>
-"C+l 右移光标
-inoremap <c-l> <Right>
-"C+k 上移光标
-inoremap <c-k> <Up>
-"C+j 下移光标
-inoremap <c-j> <Down>
-"fd退出
-inoremap fd <ESC>
+"------>设置Leader键<------
+let mapleader="\<Space>"
 
 "------>插件管理<------
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -122,13 +73,19 @@ call plug#begin('~/.vim/bundle')
 Plug 'bling/vim-airline'
 Plug 'bling/vim-bufferline'
 Plug 'bronson/vim-trailing-whitespace'
+Plug 'mileszs/ack.vim'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/syntastic'
-Plug 'mileszs/ack.vim'
+Plug 'mattesgroeger/vim-bookmarks'
 Plug 'Yggdroot/LeaderF', {'do': './install.sh'}
 Plug 'Valloric/YouCompleteMe', {'do': './install.py --all'}
 
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-markdown'
+Plug 'elzr/vim-json'
+
 Plug 'fatih/vim-go'
+Plug 'rhysd/git-messenger.vim'
 Plug 'mattn/emmet-vim'
 Plug 'maksimr/vim-jsbeautify'
 Plug 'pangloss/vim-javascript'
@@ -226,3 +183,66 @@ let g:syntastic_mode_map={'mode':'active', 'passive_filetypes':['go']}
 nnoremap go :GoRun<CR>
 nnoremap gi :GoInstall<CR>
 
+"------>tpope/vim-markdown设置<------
+let g:bookmark_no_default_key_mappings = 1
+nmap <silent><leader>m <Plug>BookmarkToggle
+nmap <silent><leader>i <Plug>BookmarkAnnotate
+nmap <silent><leader>a <Plug>BookmarkShowAll
+nmap <silent><leader>n <Plug>BookmarkNext
+nmap <silent><leader>p <Plug>BookmarkPrev
+nmap <silent><leader>c <Plug>BookmarkClearAll
+let g:bookmark_sign            = '⚑'
+let g:bookmark_highlight_lines = 0
+
+"------>快捷键设置<------
+"左右分割窗口
+noremap wv <c-w>v
+"关闭当前分割的窗口
+noremap wd <c-w>c
+"上下分割窗口
+noremap ws <c-w>s
+"光标移动到左边窗口
+noremap <c-h> <c-w>h
+"光标移动到右边窗口
+noremap <c-l> <c-w>l
+"光标移动到上面窗口
+noremap <c-k> <c-w>k
+"光标移动到下面窗口
+noremap <c-j> <c-w>j
+
+"大写H 移动光标到行首
+noremap H ^
+"大写L 移动光标到行尾
+noremap L $
+"F2打开/关闭行号
+noremap <F2> :set nonumber! number?<CR>
+
+"移动光标到右边的buffer
+nmap } :bn<CR>
+"移动光标到左边的buffer
+nmap { :bp<CR>
+"删除一个buffer
+nmap bd :bd<CR>
+"关闭others Buffer
+function! BufCloseOthers()
+   let l:currentBufNum   = bufnr("%")
+   for i in range(1,bufnr("$"))
+     if buflisted(i)
+       if i!=l:currentBufNum
+         execute("bdelete ".i)
+       endif
+     endif
+   endfor
+endfunction
+noremap ba :call BufCloseOthers()<CR>
+
+"C+h 左移光标
+inoremap <c-h> <Left>
+"C+l 右移光标
+inoremap <c-l> <Right>
+"C+k 上移光标
+inoremap <c-k> <Up>
+"C+j 下移光标
+inoremap <c-j> <Down>
+"fd退出
+inoremap fd <ESC>
