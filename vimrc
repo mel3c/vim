@@ -160,7 +160,7 @@ let g:ycm_cache_omnifunc=0                      "禁止缓存匹配项，每次�
 let g:ycm_min_num_of_chars_for_completion=1     "从第一个键入字符就开始罗列匹配项
 
 "------>fatih/vim-go设置<------
-let g:go_def_mode="godef"
+let g:go_def_mode="gopls"
 let g:go_fmt_command="goimports"
 let g:go_fmt_autosave=1
 let g:go_highlight_types = 1
