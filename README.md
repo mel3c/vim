@@ -4,7 +4,7 @@
 ```Bash
 #for centos
 [root@localhost ~]# yum -y install gcc gcc-c++ cmake git
-[root@localhost ~]# yum -y install ncurses-devel python-devel
+[root@localhost ~]# yum -y install ncurses-devel python-devel epel-release
 ```
 ```Bash
 #for mac os

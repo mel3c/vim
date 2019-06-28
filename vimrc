@@ -37,13 +37,12 @@ set nobackup                    "从不备份
 set noswapfile                  "禁止生成临时文件
 
 "------>行列设置<------
-autocmd InsertEnter * se cul    "用浅色高亮当前行
-set cursorline                  "设置当前行
-set cursorcolumn                "设置当前列
-set background=light
-hi LineNr                           ctermfg=7       ctermbg=0   "行号[8 for xshell, 0 for mac]
+hi LineNr           cterm=None      ctermfg=7       ctermbg=0   "行号  [8 for xshell, 0 for mac]
 hi CursorLine       cterm=None      ctermfg=None    ctermbg=0   "光标行[8 for xshell, 0 for mac]
-hi CursorColumn                     ctermfg=None    ctermbg=0   "光标列[8 for xshell, 0 for mac]
+hi CursorColumn     cterm=None      ctermfg=None    ctermbg=0   "光标列[8 for xshell, 0 for mac]
+set cursorline                  "高亮当前行
+set cursorcolumn                "高亮当前列
+set background=light            "背景为浅色
 
 "------>搜索设置<------
 set incsearch                   "开启实时搜索
@@ -160,7 +159,7 @@ let g:ycm_cache_omnifunc=0                      "禁止缓存匹配项，每次�
 let g:ycm_min_num_of_chars_for_completion=1     "从第一个键入字符就开始罗列匹配项
 
 "------>fatih/vim-go设置<------
-let g:go_def_mode="gopls"
+let g:go_def_mode="godef"
 let g:go_fmt_command="goimports"
 let g:go_fmt_autosave=1
 let g:go_highlight_types = 1
