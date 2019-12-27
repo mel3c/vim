@@ -15,7 +15,7 @@ set t_Co=256
 set history=400                 "历史记录数
 set scrolloff=3                 "光标到顶或底时保持3行距离
 set laststatus=2                "倒数第二行显示状态栏，0 时关闭状态栏
-set shortmess=atI               "关闭乌干达信息
+set shortmess+=T                "关闭乌干达信息
 set ambiwidth=double            "防止特殊符号无法正常显示
 set clipboard+=unnamed          "共享剪切板
 set backspace=indent,eol,start  "设置退格键删除
@@ -112,8 +112,8 @@ nmap tl :Tagbar<CR>
 
 "------>scrooloose/syntastic设置<------
 let g:syntastic_aggregate_errors = 1
-let g:syntastic_check_on_open = 1  "是否打开文件时检查
-let g:syntastic_check_on_wq = 1      "是否保存文件时检查
+let g:syntastic_check_on_open = 1       "是否打开文件时检查
+let g:syntastic_check_on_wq = 1         "是否保存文件时检查
 let g:syntastic_error_symbol = 'x'
 let g:syntastic_warning_symbol = '!'
 let g:syntastic_enable_highlighting = 0
@@ -143,45 +143,62 @@ noremap <c-o> :LeaderfMru<cr>
 noremap <c-n> :LeaderfFunction<cr>
 
 "------>Valloric/YouCompleteMe设置<------
-set report=0
 set completeopt-=preview
-set fillchars=vert:\ ,stl:\ ,stlnc:\
+
+"关闭括号高亮
+let loaded_matchparen = 1
 
 "补全窗口样式配色
 highlight Pmenu     cterm=bold  ctermfg=7   ctermbg=4
 highlight PmenuSel  cterm=bold  ctermfg=7   ctermbg=3
+highlight Folded  cterm=bold  ctermfg=7   ctermbg=3
 
-let loaded_matchparen = 1                       "关闭高亮括号匹配
-let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
-let g:pydiction_location = '~/.vim/bundle/Pydiction/complete-dict'
-let g:ycm_complete_in_comments=1                "补全功能在注释中同样有效
-let g:ycm_seed_identifiers_with_syntax=1        "语法关键字补全
-let g:ycm_cache_omnifunc=0                      "禁止缓存匹配项，每次都重新生成匹配项
-let g:ycm_min_num_of_chars_for_completion=1     "从第一个键入字符就开始罗列匹配项
+"禁止缓存匹配项,每次都重新生成匹配项
+let g:ycm_cache_omnifunc = 0
+
+"代码检查
+let g:ycm_show_diagnostics_ui = 0
+let g:ycm_error_symbol = '->'
+
+"语法关键字补全
+let g:ycm_seed_identifiers_with_syntax = 1
+
+"输入第一个字符开始补全
+let g:ycm_min_num_of_chars_for_completion = 1
+
+"补全comments
+let g:ycm_complete_in_comments = 1
+let g:ycm_collect_identifiers_from_comments_and_strings = 1
+
+"补全字符串
+let g:ycm_complete_in_strings = 1
+let g:ycm_collect_identifiers_from_tags_files = 1
+
+"let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
 
 "------>fatih/vim-go设置<------
-let g:go_def_mode="godef"
+let g:go_def_mode = "gopls"
 let g:go_fmt_command="goimports"
 let g:go_fmt_autosave=1
+let g:go_echo_go_info = 0
+let g:go_gopls_staticcheck = 1
+let g:go_highlight_space_tab_error=1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_parameters = 1
+let g:go_highlight_function_calls = 1
 let g:go_highlight_types = 1
 let g:go_highlight_fields = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_structs = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_extra_types = 1
-let g:go_highlight_variable_assignments = 1
 let g:go_highlight_build_constraints = 1
 let g:go_highlight_generate_tags = 1
 let g:go_highlight_variable_declarations = 1
+let g:go_highlight_variable_assignments = 1
 let g:go_highlight_build_constraints = 1
-let g:go_highlight_functions = 1
-let g:go_highlight_function_calls = 1
-let g:go_highlight_function_parameters = 1
 let g:godef_same_file_in_same_window=1
-let g:syntastic_go_checkers=['golint', 'govet', 'errcheck']
+"let g:syntastic_go_checkers=['golint', 'govet', 'errcheck']
 let g:syntastic_mode_map={'mode':'active', 'passive_filetypes':['go']}
-nnoremap go :GoRun<CR>
-nnoremap gi :GoInstall<CR>
 
 "------>tpope/vim-markdown设置<------
 let g:bookmark_no_default_key_mappings = 1
