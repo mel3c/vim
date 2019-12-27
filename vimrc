@@ -37,7 +37,7 @@ set nobackup                    "从不备份
 set noswapfile                  "禁止生成临时文件
 
 "------>行列设置<------
-hi LineNr           cterm=None      ctermfg=7       ctermbg=0   "行号  [8 for xshell, 0 for mac]
+hi LineNr           cterm=None      ctermfg=None    ctermbg=0   "行号  [8 for xshell, 0 for mac]
 hi CursorLine       cterm=None      ctermfg=None    ctermbg=0   "光标行[8 for xshell, 0 for mac]
 hi CursorColumn     cterm=None      ctermfg=None    ctermbg=0   "光标列[8 for xshell, 0 for mac]
 set cursorline                  "高亮当前行
@@ -68,6 +68,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
     silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     autocmd VimEnter * PlugInstall --sync | source ~/.vimrc
 endif
+
 call plug#begin('~/.vim/bundle')
 Plug 'bling/vim-airline'
 Plug 'bling/vim-bufferline'
