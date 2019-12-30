@@ -70,4 +70,3 @@
 ```Bash
 [~/project]$ npm install -g jshint     # install jshint for check js
 ```
-

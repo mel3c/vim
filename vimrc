@@ -151,7 +151,6 @@ let loaded_matchparen = 1
 "补全窗口样式配色
 highlight Pmenu     cterm=bold  ctermfg=7   ctermbg=4
 highlight PmenuSel  cterm=bold  ctermfg=7   ctermbg=3
-highlight Folded  cterm=bold  ctermfg=7   ctermbg=3
 
 "禁止缓存匹配项,每次都重新生成匹配项
 let g:ycm_cache_omnifunc = 0
@@ -174,7 +173,6 @@ let g:ycm_collect_identifiers_from_comments_and_strings = 1
 let g:ycm_complete_in_strings = 1
 let g:ycm_collect_identifiers_from_tags_files = 1
 
-"let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
 
 "------>fatih/vim-go设置<------
