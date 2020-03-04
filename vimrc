@@ -179,6 +179,7 @@ let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/
 let g:go_def_mode = "gopls"
 let g:go_fmt_command="goimports"
 let g:go_fmt_autosave=1
+let g:go_version_warning = 0
 let g:go_echo_go_info = 0
 let g:go_gopls_staticcheck = 1
 let g:go_highlight_space_tab_error=1

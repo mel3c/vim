@@ -22,7 +22,7 @@
 
 ### 编译安装
 ```Bash
-[root@localhost ~]# ./configure --prefix=/usr --with-features=huge --enable-fontset --disable-selinux  --enable-cscope --enable-multibyte --enable-pythoninterp --with-python-config-dir=/usr/lib64/python2.7/config/
+[root@localhost ~]# ./configure --prefix=/usr --with-features=huge --enable-fontset --disable-selinux  --enable-cscope --enable-multibyte --enable-rubyinterp=yes --enable-perlinterp=yes --enable-python3interp=yes --with-python3-config-dir=$(python3-config --configdir)
 [root@localhost ~]# make && make install
 ```
 
