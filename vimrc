@@ -181,7 +181,6 @@ let g:go_fmt_command="goimports"
 let g:go_fmt_autosave=1
 let g:go_version_warning = 0
 let g:go_echo_go_info = 0
-let g:go_gopls_staticcheck = 1
 let g:go_highlight_space_tab_error=1
 let g:go_highlight_extra_types = 1
 let g:go_highlight_operators = 1
@@ -196,7 +195,6 @@ let g:go_highlight_variable_declarations = 1
 let g:go_highlight_variable_assignments = 1
 let g:go_highlight_build_constraints = 1
 let g:godef_same_file_in_same_window=1
-"let g:syntastic_go_checkers=['golint', 'govet', 'errcheck']
 let g:syntastic_mode_map={'mode':'active', 'passive_filetypes':['go']}
 
 "------>tpope/vim-markdown设置<------
